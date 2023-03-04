@@ -10,5 +10,5 @@ export class AccountFilterArgs {
 export class AccountInput  {
     @Field({ nullable: true }) ID: string
     @Field() Name: string
-    @Field() Password: string
+    @Field() password: string
 }

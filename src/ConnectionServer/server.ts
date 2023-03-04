@@ -4,13 +4,13 @@ import {  ApolloServer } from 'apollo-server-express'
 import { ApolloServerPluginLandingPageGraphQLPlayground } from 'apollo-server-core';
 // import { schema } from "src/schema/schema";
 import { buildSchema } from "type-graphql";
-import { RegisterResolver } from "../Resolver/index";
+import { RegisterResolver } from "../Mutation/index";
 
 const main = async () => {
 
 const apolloServer = new ApolloServer({ 
     schema: await buildSchema({
-        resolvers: [RegisterResolver]
+        resolvers: [RegisterResolver] 
     }),
     plugins: [ApolloServerPluginLandingPageGraphQLPlayground]  
 })

@@ -1,10 +1,18 @@
-import { Resolver, Query } from "type-graphql";
+// import { DataAccount } from "../Entity/addEntity";
+import { Resolver, FieldResolver, Root } from "type-graphql";
+import { AccountEntity } from "../Entity";
+// import { AppContext } from "../Component/AppContext";
+// import { getConnection } from "typeorm";
 
 @Resolver()
-export class RegisterResolver{
-    @Query(() => String, { name: 'Regis' })
-    async execution() {
-        const Regis = 'view Regis'
-        return Regis;
-    }
-}
+export class AccountFieldResolver {
+    @FieldResolver()
+    async fullData(
+        @Root() parent: AccountEntity
+        ) { 
+            return `${parent.Name}`;
+        }
+ }
+
+
+

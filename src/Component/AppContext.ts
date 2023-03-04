@@ -1,4 +1,10 @@
-import { createContext } from 'react';
+export interface initialID {
+    ID: string
+    Name: string
+    password: string
+}
 
-export const AppContext = createContext({});
-
+export interface AppContext {
+    ID?: string
+    payload?: initialID
+}

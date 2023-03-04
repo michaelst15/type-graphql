@@ -6,15 +6,15 @@ import { Column, Entity, BaseEntity  } from 'typeorm';
 @Entity({ name: 'login' })
 @ObjectType()
 export class AccountEntity extends BaseEntity{
-    @Column('uuid')
+    @Column('int')
     @Field()
     ID: string;
 
     @Column('varchar', { length: 1000, nullable: true })
-    @Field({ nullable: true })
-    Name: string
+    @Field()
+    Name: string;
 
     @Column('varchar', { length: 10000, nullable: true })
     @Field()
-    Password: string
+    password: string;
 }
