@@ -10,7 +10,7 @@ export class AccountFieldResolver {
     async fullData(
         @Root() parent: AccountEntity
         ) { 
-            return `${parent.Name}`;
+            return `${parent.ID}`;
         }
  }
 

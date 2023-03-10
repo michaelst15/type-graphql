@@ -1,20 +1,20 @@
 import { Field, ObjectType } from 'type-graphql';
 // import { BigBaseEntity } from 'src/componentEntity';
-import { Column, Entity, BaseEntity  } from 'typeorm';
+import { Column, Entity, BaseEntity, PrimaryColumn} from 'typeorm';
 
 
-@Entity({ name: 'login' })
+@Entity({ name: 'Product' })
 @ObjectType()
 export class AccountEntity extends BaseEntity{
-    @Column('int')
     @Field()
-    ID: string;
+    @PrimaryColumn('int')
+    ID: number;  
 
+    @Field()   
     @Column('varchar', { length: 1000, nullable: true })
-    @Field()
     Name: string;
 
-    @Column('varchar', { length: 10000, nullable: true })
     @Field()
-    password: string;
+    @Column('varchar', { length: 10000, nullable: true })
+    Password: string;
 }

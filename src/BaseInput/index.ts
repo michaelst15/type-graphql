@@ -3,12 +3,12 @@ import { ArgsType, Field, InputType } from 'type-graphql';
 
 @ArgsType()
 export class AccountFilterArgs {
-   @Field({ nullable: true }) ID: string;
+   @Field() ID: string;
 }
 
 @InputType()
 export class AccountInput  {
-    @Field({ nullable: true }) ID: string
-    @Field() Name: string
-    @Field() password: string
+    @Field() ID: string
+    @Field({ nullable: true }) Name: string
+    @Field({ nullable: true }) Password: string
 }
